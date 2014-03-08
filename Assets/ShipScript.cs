@@ -13,8 +13,7 @@ public class ShipScript : MonoBehaviour
 	
 	public float xCoord, zCoord; // ship coordinates
 	public string rightSideMessage; //right GUI message 
-	
-	
+
 	//ship stats
 	public string statName = "The Manatee";
 	public int statCrewNum = 0;
@@ -44,9 +43,9 @@ public class ShipScript : MonoBehaviour
 	public GameObject mouseTarget;
 	public float destinationXCoordinate;
 	public float destinationZCoordinate;
-	public int destDistance;
+	public float destDistance;
 	public Transform destination;
-	
+	bool mouseOverGUI = false;
 	// Use this for initialization
 	void Start ()
 	{
@@ -90,35 +89,21 @@ public class ShipScript : MonoBehaviour
 		if (distance > 7) {
 			closeEnough = false;	
 		}
-		
-		
-		//check for mouse click, if clicked, get and save coordinates.
+
 		checkMouse ();
-		
-		if (canSail == true) { //if coordinates were entered that exist, then the ship will set sail to it
-			
+		if (canSail == true) {
 			sail (); //go there
-			destDistance = (int)Vector3.Distance (transform.position, flag.transform.position); //distance to dest
+			destDistance = Vector3.Distance (transform.position, flag.transform.position); //distance to dest
 			if (destDistance == 1) destDistance = 0;
 		}
-		
-		
-		
-		
-		
-		
 	}
 	
 	
 	// GUI
 	void OnGUI ()
 	{
-		
-		
-		
-		
+		Vector2 mouse = new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y);
 		var oldColor = GUI.backgroundColor;
-		
 		// turn GUI white if we can 'investigate'
 		if (closeEnough == true) {
 			GUI.color = Color.white;
@@ -127,39 +112,55 @@ public class ShipScript : MonoBehaviour
 			GUI.color = Color.red;
 		}
 		// INVESTIGATE BUTTON 
-		if (GUI.Button (new Rect (10, 10, 200, 100), "Investigate " + distance)) {
+		Rect r1 = new Rect (10, 10, 200, 100);
+		if (r1.Contains(mouse)){
+			canSail = false;
+		}
+		if (GUI.Button (r1, "Investigate " + distance)) {
 			investigate ();
 		}
-		
-		
+
 		//GUI.backgroundColor = Color.white;
 		GUI.color = Color.white;
 		GUI.contentColor = Color.white;
-		
-		
-		
+
 		// Navigation Tool //
-		GUI.Box (new Rect (10, 200, 200, 100), " ");
-		GUI.Label (new Rect (40, 220, 200, 100), "Destination: " + destinationXCoordinate + ", " + destinationZCoordinate);
+		Rect r2 = new Rect(10, 200, 200, 100);
+		GUI.Box(r2, " ");
+		if (r2.Contains(mouse)){
+			canSail = false;
+		}
+	    GUI.Label (new Rect (40, 220, 200, 100), "Destination: " + destinationXCoordinate + ", " + destinationZCoordinate);
 		GUI.Label (new Rect (40, 255, 200, 100), "Distance: " + destDistance);
-		
-		
-		
+	
 		// My Coordinates //
-		GUI.Button (new Rect (10, 100, 200, 100), "My coords: " + (int)xCoord + " " + (int)zCoord);
-		
-		if (GUI.Button (new Rect (10, 300, 200, 100), "Character Sheet")) {
+		Rect r3 = new Rect (10, 100, 200, 100);
+		if (r3.Contains(mouse)){
+			canSail = false;
+		}
+		GUI.Button (r3, "My coords: " + xCoord + " " + zCoord);
+
+		// Character Sheet//
+		Rect r4 = new Rect (10, 300, 200, 100);
+		if (r4.Contains(mouse)){
+			canSail = false;
+		}
+		if (GUI.Button (r4, "Character Sheet")) {
 			showShipSheet ();
 		}
-		
-		GUI.Button (new Rect (780, 10, 200, 400), rightSideMessage);
+
+		// Right Side Message //
+		Rect r5 = new Rect (780, 10, 200, 400);
+		if (r5.Contains(mouse)){
+			canSail = false;
+		}
+		GUI.Button (r5, rightSideMessage);
 		
 		GUI.backgroundColor = oldColor;
 	}
 	
 	public void showShipSheet ()
 	{
-		
 		rightSideMessage =
 			
 			"Ship Details\n" +
@@ -182,8 +183,6 @@ public class ShipScript : MonoBehaviour
 				"Ale " +
 				statAle +
 				"\n";
-		
-		
 	}
 	
 	public void investigate ()
@@ -196,8 +195,6 @@ public class ShipScript : MonoBehaviour
 	
 	public void sail () //will move the ship from its current location to a user specified one
 	{
-
-		Debug.Log ("in sail");
 		//move flag to coordinates of destination
 		flag.transform.position = new Vector3 (destinationXCoordinate, 0, destinationZCoordinate);
 
@@ -219,29 +216,21 @@ public class ShipScript : MonoBehaviour
 		} 
 		
 		if (startTrip) {
-			float distanceCovered = (Time.time - startTime) * speed; //keeps track of distance covered
-			float fracJourney = distanceCovered / journeyLength;	//fraction of journey completed
-			
-			//sail
+			float distanceCovered = (Time.time - startTime); //keeps track of distance covered
+			float fracJourney = distanceCovered / journeyLength * speed;	//fraction of journey completed
 			transform.position = Vector3.Lerp (startMarker.position, endMarker.position, fracJourney);
-
-			//check if close ENOUGH to destination, if so, stop
-			if (this.transform.position.z <= flag.transform.position.z - 1 && this.transform.position.z >= flag.transform.position.z + 1) {
-				if (this.transform.position.x <= (flag.transform.position.x  - 1) && this.transform.position.x >= (flag.transform.position.x + 1)) {
-					{
-						canSail = false;
-						shouldRotate = false;
-						startTrip = false;
-						
-					}
-				}
+			float closeEnough = 2f;
+			if (Vector3.Distance(this.transform.position, flag.transform.position) < closeEnough){
+				canSail = false;
+				shouldRotate = false;
+				startTrip = false;
 			}
 		}
 	}
 	
 	public void checkMouse ()
 	{
-		if (Input.GetMouseButtonDown (0)) {
+		if (Input.GetMouseButtonDown (0) ) {
 			ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit hit;
 			if (Physics.Raycast (ray, out hit, 100)) {
@@ -249,20 +238,14 @@ public class ShipScript : MonoBehaviour
 				if (hit.collider.tag == "island") {
 					Debug.Log ("YOU CLICKED THE ISLAND YAY!)");
 				}
-				
+
 				mouseX = hit.point.x;
 				mouseZ = hit.point.z;
-				Debug.Log (mouseX);
-				Debug.Log (mouseZ);
-				
 				canSail = true;
-				shouldRotate = true;
-				newTrip = true;
-				
-				mouseX = Mathf.Round(mouseX * 100f) / 100f;
-				mouseZ = Mathf.Round(mouseZ * 100f) / 100f;
-				destinationXCoordinate = (int)mouseX;
-				destinationZCoordinate = (int)mouseZ;
+				shouldRotate = true; //if player clicked a location, should rotate ship towards
+				newTrip = true; //if player clicked a location, will make a new trip
+				destinationXCoordinate = Mathf.Round(mouseX * 100f) / 100f;
+				destinationZCoordinate = Mathf.Round(mouseZ * 100f) / 100f;
 			}    
 		}    
 		
