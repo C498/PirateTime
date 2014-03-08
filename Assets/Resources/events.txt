@@ -1,0 +1,11 @@
+#eventName: octopuss01
+#event text: You see a giant octopus! It lingers beneath the ship... 
+#options: 1
+#result text: You are victorious! The octopuss is dead!
+#odds 50
+#Wit: False
+#Morale: False
+#Crew: False
+#Ale: False
+#Coins: False
+#Gunpowder: False
