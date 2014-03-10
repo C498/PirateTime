@@ -11,9 +11,11 @@ public class ShipScript : MonoBehaviour
 	public GameObject island;
 	public IslandScript islandScript; //need to access island script
 	
+	public GameObject mainCamera;
+	
 	public float xCoord, zCoord; // ship coordinates
 	public string rightSideMessage; //right GUI message 
-
+	
 	//ship stats
 	public string statName = "The Manatee";
 	public int statCrewNum = 0;
@@ -45,13 +47,18 @@ public class ShipScript : MonoBehaviour
 	public float destinationZCoordinate;
 	public float destDistance;
 	public Transform destination;
-	bool mouseOverGUI = false;
+	public bool mouseOverGui = false;
+	//questInfo
+	string questEventName;
+	
+	bool questGUIOn = false;
+	Quests currentQuest;
 	// Use this for initialization
 	void Start ()
 	{
 		islandScript = GameObject.Find ("island").GetComponent<IslandScript> ();
 		island = GameObject.FindGameObjectWithTag ("island"); //we need the island data
-		
+		mainCamera = GameObject.FindGameObjectWithTag("Main Camera"); //quests are in camera
 	}
 	
 	// Update is called once per frame
@@ -59,37 +66,11 @@ public class ShipScript : MonoBehaviour
 	{
 		xCoord = gameObject.transform.position.x;
 		zCoord = gameObject.transform.position.z;
-		
-		//INPUTS. WILL CHANGE. NEED TO CREATE NAVIGATION SYSTEM
-		if (Input.GetKey ("w")) {
-			transform.Translate (-speed * Vector3.back * Time.deltaTime);
-		}
-		
-		if (Input.GetKey ("s")) {	
-			transform.Translate (speed * Vector3.back * Time.deltaTime);
-		}
-		
-		if (Input.GetKey ("a")) {
-			
-			transform.Translate (-speed * Vector2.right * Time.deltaTime);
-		}
-		
-		if (Input.GetKey ("d")) {
-			
-			transform.Translate (speed * Vector2.right * Time.deltaTime);
-		}
-		
+
 		//DISTANCE CHECKER IF ANY ISLANDS NEAR? (EARLY MECHANIC)
 		distance = Vector3.Distance (transform.position, island.transform.position);
-		
-		
-		if (distance < 6) {
-			closeEnough = true; //we are close to an island
-		}
-		if (distance > 7) {
-			closeEnough = false;	
-		}
-
+		if (distance < 6) closeEnough = true; //we are close to an island
+		if (distance > 7) closeEnough = false;
 		checkMouse ();
 		if (canSail == true) {
 			sail (); //go there
@@ -107,56 +88,55 @@ public class ShipScript : MonoBehaviour
 		// turn GUI white if we can 'investigate'
 		if (closeEnough == true) {
 			GUI.color = Color.white;
+			if (GUI.Button (new Rect (10, 10, 200, 100), "Investigate " + distance)) {
+				investigate ();
+			}
 		}
 		if (closeEnough == false) {
 			GUI.color = Color.red;
 		}
 		// INVESTIGATE BUTTON 
-		Rect r1 = new Rect (10, 10, 200, 100);
-		if (r1.Contains(mouse)){
-			canSail = false;
-		}
-		if (GUI.Button (r1, "Investigate " + distance)) {
+		/*if (GUI.Button (new Rect (10, 10, 200, 100), "Investigate " + distance)) {
 			investigate ();
-		}
-
+		}*/
+		
 		//GUI.backgroundColor = Color.white;
 		GUI.color = Color.white;
 		GUI.contentColor = Color.white;
-
+		
 		// Navigation Tool //
 		Rect r2 = new Rect(10, 200, 200, 100);
 		GUI.Box(r2, " ");
-		if (r2.Contains(mouse)){
-			canSail = false;
-		}
-	    GUI.Label (new Rect (40, 220, 200, 100), "Destination: " + destinationXCoordinate + ", " + destinationZCoordinate);
+		GUI.Label (new Rect (40, 220, 200, 100), "Destination: " + destinationXCoordinate + ", " + destinationZCoordinate);
 		GUI.Label (new Rect (40, 255, 200, 100), "Distance: " + destDistance);
-	
+		
 		// My Coordinates //
 		Rect r3 = new Rect (10, 100, 200, 100);
-		if (r3.Contains(mouse)){
-			canSail = false;
-		}
 		GUI.Button (r3, "My coords: " + xCoord + " " + zCoord);
-
+		
 		// Character Sheet//
 		Rect r4 = new Rect (10, 300, 200, 100);
-		if (r4.Contains(mouse)){
-			canSail = false;
-		}
 		if (GUI.Button (r4, "Character Sheet")) {
-			showShipSheet ();
+			//showShipSheet ();
 		}
-
+		
 		// Right Side Message //
 		Rect r5 = new Rect (780, 10, 200, 400);
-		if (r5.Contains(mouse)){
-			canSail = false;
-		}
 		GUI.Button (r5, rightSideMessage);
 		
 		GUI.backgroundColor = oldColor;
+
+		
+		if (questGUIOn){
+			GUIStyle boxStyle = "box";
+			boxStyle.wordWrap = true;
+			GUI.Box (new Rect (400, 100, 200, 200), currentQuest.eventText, boxStyle);
+			Texture2D eventTexture = Resources.Load ("octo") as Texture2D;
+			GUI.Box (new Rect(450, 150, 100, 100), eventTexture, boxStyle);
+			GUI.Button (new Rect (440, 260, 42, 22), "Fight" );
+			GUI.Button (new Rect (520, 260, 42, 22), "Flee" );
+		}
+		
 	}
 	
 	public void showShipSheet ()
@@ -191,20 +171,29 @@ public class ShipScript : MonoBehaviour
 		rightSideMessage = "island coords: " + (int)islandScript.xCoord + " " + (int)islandScript.zCoord + "\n" +
 			"my coords: " + (int)xCoord + " " + (int)zCoord;
 		
+		CameraScript cScript;
+		cScript = (CameraScript)FindObjectOfType(typeof(CameraScript));
+		int questCount = cScript.questList.Count;
+		int randomQuestNumber = Random.Range (0, questCount); //for ints
+		currentQuest = cScript.questList[randomQuestNumber];
+		
+		questGUIOn = true;
+		//add quest to gui. 
+		
 	}
 	
 	public void sail () //will move the ship from its current location to a user specified one
 	{
 		//move flag to coordinates of destination
 		flag.transform.position = new Vector3 (destinationXCoordinate, 0, destinationZCoordinate);
-
+		
 		//rotate
 		if (shouldRotate) {
 			target = flag;
 			Quaternion rotation = Quaternion.LookRotation (target.transform.position - transform.position);
 			transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * rotateSpeed);
 		}
-
+		
 		// set up variables used for trip
 		if (newTrip) {
 			startTime = Time.time;
@@ -226,27 +215,49 @@ public class ShipScript : MonoBehaviour
 				startTrip = false;
 			}
 		}
+		
+		
 	}
 	
 	public void checkMouse ()
 	{
+		
+		
 		if (Input.GetMouseButtonDown (0) ) {
-			ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-			RaycastHit hit;
-			if (Physics.Raycast (ray, out hit, 100)) {
-				
-				if (hit.collider.tag == "island") {
-					Debug.Log ("YOU CLICKED THE ISLAND YAY!)");
-				}
-
-				mouseX = hit.point.x;
-				mouseZ = hit.point.z;
-				canSail = true;
-				shouldRotate = true; //if player clicked a location, should rotate ship towards
-				newTrip = true; //if player clicked a location, will make a new trip
-				destinationXCoordinate = Mathf.Round(mouseX * 100f) / 100f;
-				destinationZCoordinate = Mathf.Round(mouseZ * 100f) / 100f;
-			}    
+			Vector2 mouse = new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y);
+			
+			//if clicked outside of event gui, turn it off
+			if (new Rect (400, 100, 200, 200).Contains (mouse) && questGUIOn){
+				canSail = false;
+			} else { questGUIOn = false; }
+			
+			//if clicked outside of gui, sail there.
+			if (new Rect (10, 10, 200, 800).Contains (mouse)){
+				canSail = false;
+			} else {
+				if (questGUIOn == false) {
+					ray = Camera.main.ScreenPointToRay (Input.mousePosition);
+					RaycastHit hit;
+					if (Physics.Raycast (ray, out hit, 100)) {
+						
+						if (hit.collider.tag == "island") {
+							Debug.Log ("YOU CLICKED THE ISLAND YAY!)");
+						}
+						
+						mouseX = hit.point.x;
+						mouseZ = hit.point.z;
+						
+						if (mouseOverGui == false){
+							canSail = true;
+							shouldRotate = true; //if player clicked a location, should rotate ship towards
+							newTrip = true; //if player clicked a location, will make a new trip
+						}
+						destinationXCoordinate = Mathf.Round(mouseX * 100f) / 100f;
+						destinationZCoordinate = Mathf.Round(mouseZ * 100f) / 100f;
+						
+					}}
+			}
+			
 		}    
 		
 		

@@ -8,9 +8,7 @@ public class eventManager : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		
-		
-		Debug.Log("test");
+
 		
 		TextAsset txt = (TextAsset)Resources.Load("events", typeof(TextAsset));
 		string content = txt.text;
@@ -35,8 +33,8 @@ public class eventManager : MonoBehaviour {
 			}
 			
 		}
-		Debug.Log (xcounter);
-		Debug.Log (eventName);
+		//Debug.Log (xcounter);
+		//Debug.Log (eventName);
 	}
 	// Update is called once per frame
 	void Update () {
