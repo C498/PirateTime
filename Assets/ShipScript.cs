@@ -1,5 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+using System.IO; 
+
 
 public class ShipScript : MonoBehaviour
 {
@@ -53,7 +57,8 @@ public class ShipScript : MonoBehaviour
 	
 	bool questGUIOn = false;
 	Quests currentQuest;
-	//public List<islands> questList;
+	public List<GameObject> islands;
+
 
 	// Use this for initialization
 	void Start ()
@@ -61,8 +66,23 @@ public class ShipScript : MonoBehaviour
 		islandScript = GameObject.Find ("island").GetComponent<IslandScript> ();
 		island = GameObject.FindGameObjectWithTag ("island"); //we need the island data
 
+	}
 
-		mainCamera = GameObject.FindGameObjectWithTag("Main Camera"); //quests are in camera
+	GameObject FindClosestEnemy() {
+		GameObject[] gos;
+		gos = GameObject.FindGameObjectsWithTag("island");
+		GameObject closest=null;
+		float distance = Mathf.Infinity;
+		Vector3 position = transform.position;
+		foreach (GameObject go in gos) {
+			Vector3 diff = go.transform.position - position;
+			float curDistance = diff.sqrMagnitude;
+			if (curDistance < distance) {
+				closest = go;
+				distance = curDistance;
+			}
+		}
+		return closest;
 	}
 	
 	// Update is called once per frame
@@ -72,7 +92,7 @@ public class ShipScript : MonoBehaviour
 		zCoord = gameObject.transform.position.z;
 
 		//DISTANCE CHECKER IF ANY ISLANDS NEAR? (EARLY MECHANIC)
-		distance = Vector3.Distance (transform.position, island.transform.position);
+		distance = Vector3.Distance (transform.position, FindClosestEnemy().transform.position);
 		if (distance < 6) closeEnough = true; //we are close to an island
 		if (distance > 7) closeEnough = false;
 		checkMouse ();
@@ -115,18 +135,15 @@ public class ShipScript : MonoBehaviour
 		GUI.Label (new Rect (40, 255, 200, 100), "Distance: " + destDistance);
 		
 		// My Coordinates //
-		Rect r3 = new Rect (10, 100, 200, 100);
-		GUI.Button (r3, "My coords: " + xCoord + " " + zCoord);
+		GUI.Button (new Rect (10, 100, 200, 100), "My coords: " + xCoord + " " + zCoord);
 		
 		// Character Sheet//
-		Rect r4 = new Rect (10, 300, 200, 100);
-		if (GUI.Button (r4, "Character Sheet")) {
+		if (GUI.Button (new Rect (10, 300, 200, 100), "Character Sheet")) {
 			//showShipSheet ();
 		}
 		
 		// Right Side Message //
-		Rect r5 = new Rect (1000, 10, 200, 400);
-		GUI.Button (r5, rightSideMessage);
+		GUI.Button (new Rect (1000, 10, 200, 400), rightSideMessage);
 		
 		GUI.backgroundColor = oldColor;
 
@@ -135,9 +152,8 @@ public class ShipScript : MonoBehaviour
 			GUIStyle boxStyle = "box";
 			boxStyle.wordWrap = true;
 			GUI.Box (new Rect (400, 100, 500, 500), currentQuest.eventText, boxStyle);
-			//string imagename = currentQuest.eventName;
-			//Debug.Log ("image name is" + imagename);
-			Texture2D eventTexture = Resources.Load ("octopuss01") as Texture2D;
+			string imagename = currentQuest.eventName.ToString().TrimEnd( '\r', '\n' );
+			Texture2D eventTexture = Resources.Load (imagename) as Texture2D;
 			GUI.Box (new Rect(450, 150, 400, 314), eventTexture, boxStyle);
 			GUI.Button (new Rect (470, 490, 42, 22), "Fight" );
 			GUI.Button (new Rect (590, 490, 42, 22), "Flee" );

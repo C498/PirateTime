@@ -155,7 +155,7 @@ public class CameraScript : MonoBehaviour {
 				} else { 
 					//append character to string
 					currentQuestProperty = currentQuestProperty + c;
-					if (c == ':'){ //ignore text before semicolon
+					if (c == '^'){ //ignore text before semicolon
 						currentQuestProperty = "";
 					}	
 				}	
