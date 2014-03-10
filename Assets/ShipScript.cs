@@ -53,11 +53,15 @@ public class ShipScript : MonoBehaviour
 	
 	bool questGUIOn = false;
 	Quests currentQuest;
+	//public List<islands> questList;
+
 	// Use this for initialization
 	void Start ()
 	{
 		islandScript = GameObject.Find ("island").GetComponent<IslandScript> ();
 		island = GameObject.FindGameObjectWithTag ("island"); //we need the island data
+
+
 		mainCamera = GameObject.FindGameObjectWithTag("Main Camera"); //quests are in camera
 	}
 	
@@ -121,7 +125,7 @@ public class ShipScript : MonoBehaviour
 		}
 		
 		// Right Side Message //
-		Rect r5 = new Rect (780, 10, 200, 400);
+		Rect r5 = new Rect (1000, 10, 200, 400);
 		GUI.Button (r5, rightSideMessage);
 		
 		GUI.backgroundColor = oldColor;
@@ -130,11 +134,13 @@ public class ShipScript : MonoBehaviour
 		if (questGUIOn){
 			GUIStyle boxStyle = "box";
 			boxStyle.wordWrap = true;
-			GUI.Box (new Rect (400, 100, 200, 200), currentQuest.eventText, boxStyle);
-			Texture2D eventTexture = Resources.Load ("octo") as Texture2D;
-			GUI.Box (new Rect(450, 150, 100, 100), eventTexture, boxStyle);
-			GUI.Button (new Rect (440, 260, 42, 22), "Fight" );
-			GUI.Button (new Rect (520, 260, 42, 22), "Flee" );
+			GUI.Box (new Rect (400, 100, 500, 500), currentQuest.eventText, boxStyle);
+			//string imagename = currentQuest.eventName;
+			//Debug.Log ("image name is" + imagename);
+			Texture2D eventTexture = Resources.Load ("octopuss01") as Texture2D;
+			GUI.Box (new Rect(450, 150, 400, 314), eventTexture, boxStyle);
+			GUI.Button (new Rect (470, 490, 42, 22), "Fight" );
+			GUI.Button (new Rect (590, 490, 42, 22), "Flee" );
 		}
 		
 	}
@@ -227,7 +233,7 @@ public class ShipScript : MonoBehaviour
 			Vector2 mouse = new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y);
 			
 			//if clicked outside of event gui, turn it off
-			if (new Rect (400, 100, 200, 200).Contains (mouse) && questGUIOn){
+			if (new Rect (400, 100, 500, 500).Contains (mouse) && questGUIOn){
 				canSail = false;
 			} else { questGUIOn = false; }
 			
