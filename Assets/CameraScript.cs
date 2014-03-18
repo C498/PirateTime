@@ -24,12 +24,12 @@ public class CameraScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//Debug.Log ("Total number of quests = " + questList.Count);
-		
+		/*
 		//MOUSE SCROLL BACK
 		if (Input.GetAxis("Mouse ScrollWheel") < 0) // back
 		{
 			
-			if (Camera.main.transform.position.y <=30)
+			if (Camera.main.transform.position.y <= 30)
 			{
 				
 				pos = new Vector3(0,1,-1); //Translate 1 unit on x, and 1 unit on z
@@ -39,11 +39,10 @@ public class CameraScript : MonoBehaviour {
 		}
 		
 		// MOUSE SCROLL FORWARD
-		if (Input.GetAxis("Mouse ScrollWheel") > 0) // forward
+		if ( Input.GetAxis("Mouse ScrollWheel") > 0 ) // forward
 		{
-			if (Camera.main.transform.position.y >=4)
+			if ( Camera.main.transform.position.y >= 4 )
 			{
-				
 				pos = new Vector3(0,-1,1); //Translate 1 unit on x, and 1 unit on z
 				Camera.main.transform.position += pos;
 				
@@ -56,7 +55,7 @@ public class CameraScript : MonoBehaviour {
 			Camera.main.transform.position = new Vector3(0,10,-2);
 			pos = new Vector3(0,10,-2);
 		}
-		
+		*/
 	}
 	
 	void generateQuests() {

@@ -4,6 +4,12 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO; 
 
+/*
+ * use input handler, to have it work across platforms
+ * success ratio -> after prototype
+ * 
+ */
+
 
 public class ShipScript : MonoBehaviour
 {
@@ -254,7 +260,7 @@ public class ShipScript : MonoBehaviour
 			} else { questGUIOn = false; }
 			
 			//if clicked outside of gui, sail there.
-			if (new Rect (10, 10, 200, 800).Contains (mouse)){
+			if (new Rect (10, 10, 200, 400).Contains (mouse)){
 				canSail = false;
 			} else {
 				if (questGUIOn == false) {
