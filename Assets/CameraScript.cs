@@ -70,7 +70,7 @@ public class CameraScript : MonoBehaviour {
 		int totalQuestCount=0;
 
 		foreach( char c in questsText ) {
-			if ( propertyCount < 71){ //if 70 properties added, then new event must be added to list
+			if ( propertyCount < 75){ //if 70 properties added, then new event must be added to list
 
 				if ( c == '~') {
 					//write that property to the quest class
@@ -112,42 +112,55 @@ public class CameraScript : MonoBehaviour {
 					if (propertyCount == 34){ currentQuest.failureAle1 = System.Convert.ToInt32( currentQuestProperty) ; }
 					if (propertyCount == 35){ currentQuest.failureGunpowder1 = System.Convert.ToInt32( currentQuestProperty) ; }
 					if (propertyCount == 36){ currentQuest.failureCoins1 = System.Convert.ToInt32( currentQuestProperty) ; }
-					
-					if (propertyCount == 37){ currentQuest.optionText2 = currentQuestProperty; }
-					if (propertyCount == 38){ currentQuest.successText2 = currentQuestProperty; }
-					if (propertyCount == 39){ currentQuest.failText2 = currentQuestProperty; }
-					if (propertyCount == 40){ currentQuest.odds2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 41){ currentQuest.oddsWit2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 42){ currentQuest.oddsMorale2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 43){ currentQuest.oddsNotoriety2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 44){ currentQuest.oddsCharisma2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 45){ currentQuest.oddsEvil2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 46){ currentQuest.oddsCrew2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 47){ currentQuest.oddsIntegrity2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 48){ currentQuest.oddsAle2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 49){ currentQuest.oddsGunpowder2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 50){ currentQuest.oddsCoins2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 51){ currentQuest.successWit2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 52){ currentQuest.successMorale2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 53){ currentQuest.successNotoriety2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 54){ currentQuest.successCharisma2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 55){ currentQuest.successEvil2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 56){ currentQuest.successCrew2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 57){ currentQuest.successIntegrity2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 58){ currentQuest.successAle2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 59){ currentQuest.successGunpowder2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 60){ currentQuest.successCoins2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 61){ currentQuest.failureWit2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 62){ currentQuest.failureMorale2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 63){ currentQuest.failureNotoriety2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 64){ currentQuest.failureCharisma2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 65){ currentQuest.failureEvil2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 66){ currentQuest.failureCrew2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 67){ currentQuest.failureIntegrity2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 68){ currentQuest.failureAle2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 69){ currentQuest.failureGunpowder2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					if (propertyCount == 70){ currentQuest.failureCoins2 = System.Convert.ToInt32( currentQuestProperty) ; }
-					
+					if (propertyCount == 37){ 
+						//currentQuestProperty == "true"
+						if (currentQuestProperty == "True" ) {currentQuest.makeFight1 = true;}
+						else currentQuest.makeFight1 = false;
+					}
+					if (propertyCount == 38){ currentQuest.fightDifficulty1 = currentQuestProperty; }
+
+					//change below
+					if (propertyCount == 39){ currentQuest.optionText2 = currentQuestProperty; }
+					if (propertyCount == 40){ currentQuest.successText2 = currentQuestProperty; }
+					if (propertyCount == 41){ currentQuest.failText2 = currentQuestProperty; }
+					if (propertyCount == 42){ currentQuest.odds2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 43){ currentQuest.oddsWit2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 44){ currentQuest.oddsMorale2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 45){ currentQuest.oddsNotoriety2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 46){ currentQuest.oddsCharisma2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 47){ currentQuest.oddsEvil2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 48){ currentQuest.oddsCrew2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 49){ currentQuest.oddsIntegrity2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 50){ currentQuest.oddsAle2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 51){ currentQuest.oddsGunpowder2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 52){ currentQuest.oddsCoins2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 53){ currentQuest.successWit2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 54){ currentQuest.successMorale2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 55){ currentQuest.successNotoriety2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 56){ currentQuest.successCharisma2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 57){ currentQuest.successEvil2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 58){ currentQuest.successCrew2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 59){ currentQuest.successIntegrity2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 60){ currentQuest.successAle2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 61){ currentQuest.successGunpowder2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 62){ currentQuest.successCoins2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 63){ currentQuest.failureWit2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 64){ currentQuest.failureMorale2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 65){ currentQuest.failureNotoriety2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 66){ currentQuest.failureCharisma2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 67){ currentQuest.failureEvil2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 68){ currentQuest.failureCrew2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 69){ currentQuest.failureIntegrity2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 70){ currentQuest.failureAle2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 71){ currentQuest.failureGunpowder2 = System.Convert.ToInt32( currentQuestProperty) ; }
+					if (propertyCount == 72){ currentQuest.failureCoins2 = System.Convert.ToInt32( currentQuestProperty) ; }
+
+					if (propertyCount == 73){ 
+						//currentQuestProperty == "true"
+						if (currentQuestProperty == "True" ) {currentQuest.makeFight2 = true;}
+						else currentQuest.makeFight2 = false; }
+					if (propertyCount == 74){ currentQuest.fightDifficulty2 = currentQuestProperty; }
+
 					currentQuestProperty=" "; //clear the property
 					propertyCount++;
 
