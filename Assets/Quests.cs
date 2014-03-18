@@ -38,6 +38,8 @@ public class Quests {
 	public int failureAle1;
 	public int failureGunpowder1;
 	public int failureCoins1;
+	public bool makeFight1;
+	public string fightDifficulty1;
 	public string optionText2;
 	public string successText2;
 	public string failText2;
@@ -72,6 +74,8 @@ public class Quests {
 	public int failureAle2;
 	public int failureGunpowder2;
 	public int failureCoins2;
+	public bool makeFight2;
+	public string fightDifficulty2;
 
 	// Use this for initialization
 	void Start () {
