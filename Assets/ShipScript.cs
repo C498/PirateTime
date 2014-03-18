@@ -135,8 +135,7 @@ public class ShipScript : MonoBehaviour
 		GUI.contentColor = Color.white;
 		
 		// Navigation Tool //
-		Rect r2 = new Rect(10, 200, 200, 100);
-		GUI.Box(r2, " ");
+		GUI.Box(new Rect(10, 200, 200, 100), " ");
 		GUI.Label (new Rect (40, 220, 200, 100), "Destination: " + destinationXCoordinate + ", " + destinationZCoordinate);
 		GUI.Label (new Rect (40, 255, 200, 100), "Distance: " + destDistance);
 		
@@ -159,7 +158,10 @@ public class ShipScript : MonoBehaviour
 			boxStyle.wordWrap = true;
 			GUI.Box (new Rect (400, 100, 500, 500), currentQuest.eventText, boxStyle);
 			string imagename = currentQuest.eventName.ToString().TrimEnd( '\r', '\n' );
-			Texture2D eventTexture = Resources.Load (imagename) as Texture2D;
+
+			Debug.Log("This is the name of our image" + imagename);
+			Texture2D eventTexture = Resources.Load ("questImages/" + imagename) as Texture2D;
+
 			GUI.Box (new Rect(450, 150, 400, 314), eventTexture, boxStyle);
 			GUI.Button (new Rect (470, 490, 42, 22), "Fight" );
 			GUI.Button (new Rect (590, 490, 42, 22), "Flee" );
