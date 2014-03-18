@@ -26,13 +26,18 @@ public class ShipScript : MonoBehaviour
 	public float xCoord, zCoord; // ship coordinates
 	public string rightSideMessage; //right GUI message 
 	
-	//ship stats
-	public string statName = "The Manatee";
-	public int statCrewNum = 0;
+	//ship stats and resources
+	public int statCrewMembers = 8;
 	public int statGunPowder = 4;
-	public int statFood = 4;
-	public int statAle = 4;
-	public int statTotalMorale = 100;
+	public int statAle = 50;
+	public int statIntegrity = 100;
+	public int statTreasure = 0;
+	
+	public int statMorale = 1;
+	public int statEvil = 1;
+	public int statWit = 1;
+	public int statNotoriety = 1;
+	public int Charisma = 1;
 	
 	//Used for moving ship
 	public Transform startMarker;		//start location
@@ -113,6 +118,11 @@ public class ShipScript : MonoBehaviour
 	// GUI
 	void OnGUI ()
 	{
+
+		// Box for stats on bottom of screen
+		Texture2D statIntegrityTexture = Resources.Load ("statImages/" + "integrity") as Texture2D;
+		GUI.Box(new Rect(10, 600, 500, 50), statIntegrityTexture);
+
 		Vector2 mouse = new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y);
 		var oldColor = GUI.backgroundColor;
 		// turn GUI white if we can 'investigate'
@@ -174,21 +184,15 @@ public class ShipScript : MonoBehaviour
 		rightSideMessage =
 			
 			"Ship Details\n" +
-				"\n" +
-				"Ship Name: " +
-				statName +
-				"\n" +
+				"\n"+
 				"Crew Count: " +
-				statCrewNum +
+				statCrewMembers +
 				"\n" +
 				"Total Morale: " +
-				statTotalMorale +
+				statMorale +
 				"\n" +
 				"Gun Powder: " +
 				statGunPowder +
-				"\n" +
-				"Food: " +
-				statFood +
 				"\n" +
 				"Ale " +
 				statAle +
