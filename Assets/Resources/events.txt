@@ -1,8 +1,8 @@
-~eventName: octopuss04
-~event text^ You see a giant octopus! It lingers beneath the ship... 
-~option text1^ Fight the large sea creature.
-~success text1^ You are victorious! The octopuss is dead!
-~fail text1^ You failed! You lost some gold and integrity! :(
+~eventName ^octopuss04
+~event text^You see a giant octopus! It lingers beneath the ship... 
+~option text1^Fight the large sea creature.
+~success text1^You are victorious! The octopuss is dead!
+~fail text1^You failed! You lost some gold and integrity!  
 ~odds1^50
 ~odds Wit1^1
 ~odds Morale1^1
@@ -36,7 +36,7 @@
 ~Failure Coins1^0
 ~option text2^Attempt to run away!
 ~success text2^You are victorious! You ran away!
-~fail text2^You failed! You lost some gold and integrity! :(
+~fail text2^You failed! You lost some gold and integrity!  
 ~odds2^50
 ~odds Wit2^1
 ~odds Morale2^1
@@ -68,11 +68,11 @@
 ~Failure Ale2^0
 ~Failure Gunpowder2^0
 ~Failure Coins2^0
-~eventName: octopuss04
-~event text^ You see a giant octopus! It lingers beneath the ship... 
-~option text1^ Fight the large sea creature.
-~success text1^ You are victorious! The octopuss is dead!
-~fail text1^ You failed! You lost some gold and integrity! :(
+~eventName ^octopuss04
+~event text^You see a giant octopus! It lingers beneath the ship... 
+~option text1^Fight the large sea creature.
+~success text1^You are victorious! The octopuss is dead!
+~fail text1^You failed! You lost some gold and integrity!  
 ~odds1^50
 ~odds Wit1^1
 ~odds Morale1^1
@@ -106,7 +106,7 @@
 ~Failure Coins1^0
 ~option text2^Attempt to run away!
 ~success text2^You are victorious! You ran away!
-~fail text2^You failed! You lost some gold and integrity! :(
+~fail text2^You failed! You lost some gold and integrity!  
 ~odds2^50
 ~odds Wit2^1
 ~odds Morale2^1
@@ -138,11 +138,11 @@
 ~Failure Ale2^0
 ~Failure Gunpowder2^0
 ~Failure Coins2^0
-~eventName: octopuss04
-~event text^ You see a giant octopus! It lingers beneath the ship... 
-~option text1^ Fight the large sea creature.
-~success text1^ You are victorious! The octopuss is dead!
-~fail text1^ You failed! You lost some gold and integrity! :(
+~eventName ^octopuss04
+~event text^You see a giant octopus! It lingers beneath the ship... 
+~option text1^Fight the large sea creature.
+~success text1^You are victorious! The octopuss is dead!
+~fail text1^You failed! You lost some gold and integrity!  
 ~odds1^50
 ~odds Wit1^1
 ~odds Morale1^1
@@ -176,7 +176,7 @@
 ~Failure Coins1^0
 ~option text2^Attempt to run away!
 ~success text2^You are victorious! You ran away!
-~fail text2^You failed! You lost some gold and integrity! :(
+~fail text2^You failed! You lost some gold and integrity!  
 ~odds2^50
 ~odds Wit2^1
 ~odds Morale2^1
@@ -208,11 +208,11 @@
 ~Failure Ale2^0
 ~Failure Gunpowder2^0
 ~Failure Coins2^0
-~eventName: octopuss04
-~event text^ You see a giant octopus! It lingers beneath the ship... 
-~option text1^ Fight the large sea creature.
-~success text1^ You are victorious! The octopuss is dead!
-~fail text1^ You failed! You lost some gold and integrity! :(
+~eventName ^octopuss04
+~event text^You see a giant octopus! It lingers beneath the ship... 
+~option text1^Fight the large sea creature.
+~success text1^You are victorious! The octopuss is dead!
+~fail text1^You failed! You lost some gold and integrity!  
 ~odds1^50
 ~odds Wit1^1
 ~odds Morale1^1
@@ -246,7 +246,7 @@
 ~Failure Coins1^0
 ~option text2^Attempt to run away!
 ~success text2^You are victorious! You ran away!
-~fail text2^You failed! You lost some gold and integrity! :(
+~fail text2^You failed! You lost some gold and integrity!  
 ~odds2^50
 ~odds Wit2^1
 ~odds Morale2^1
@@ -278,11 +278,11 @@
 ~Failure Ale2^0
 ~Failure Gunpowder2^0
 ~Failure Coins2^0
-~eventName: octopuss04
-~event text^ You see a giant octopus! It lingers beneath the ship... 
-~option text1^ Fight the large sea creature.
-~success text1^ You are victorious! The octopuss is dead!
-~fail text1^ You failed! You lost some gold and integrity! :(
+~eventName ^octopuss04
+~event text^You see a giant octopus! It lingers beneath the ship... 
+~option text1^Fight the large sea creature.
+~success text1^You are victorious! The octopuss is dead!
+~fail text1^You failed! You lost some gold and integrity!  
 ~odds1^50
 ~odds Wit1^1
 ~odds Morale1^1
@@ -316,7 +316,7 @@
 ~Failure Coins1^0
 ~option text2^Attempt to run away!
 ~success text2^You are victorious! You ran away!
-~fail text2^You failed! You lost some gold and integrity! :(
+~fail text2^You failed! You lost some gold and integrity!  
 ~odds2^50
 ~odds Wit2^1
 ~odds Morale2^1
@@ -348,15 +348,15 @@
 ~Failure Ale2^0
 ~Failure Gunpowder2^0
 ~Failure Coins2^0
-~eventName: Dealer01
-~event text^ You approach the land and see a merchant. He smiles at a new customer and asks if you want to trade
+~eventName ^Dealer01
+~event text^You approach the land and see a merchant. He smiles at a new customer and asks if you want to trade
 
 
 -5 Ale
 +1 Treasure
-~option text1^ Accept the deal!
-~success text1^ You grab the treasure and leave the 5 ale behind.
-~fail text1^ You failed! You lost some gold and integrity! :(
+~option text1^Accept the deal!
+~success text1^You grab the treasure and leave the 5 ale behind.
+~fail text1^You failed! You lost some gold and integrity!  
 ~odds1^100
 ~odds Wit1^1
 ~odds Morale1^1
@@ -390,7 +390,7 @@
 ~Failure Coins1^0
 ~option text2^Deny the deal!
 ~success text2^You walk away from the deal.
-~fail text2^You failed! You lost some gold and integrity! :(
+~fail text2^You failed! You lost some gold and integrity!  
 ~odds2^100
 ~odds Wit2^1
 ~odds Morale2^1
@@ -422,15 +422,15 @@
 ~Failure Ale2^0
 ~Failure Gunpowder2^0
 ~Failure Coins2^0
-~eventName: Dealer02
-~event text^ You approach the land and see a merchant. He smiles at a new customer and asks if you want to trade
+~eventName ^Dealer02
+~event text^You approach the land and see a merchant. He smiles at a new customer and asks if you want to trade
 
 
 -2 Gun Powder
 +1 Crew Mate
-~option text1^ Accept the deal!
-~success text1^ You grab the treasure and leave the 5 ale behind.
-~fail text1^ You failed! You lost some gold and integrity! :(
+~option text1^Accept the deal!
+~success text1^You grab the treasure and leave the 5 ale behind.
+~fail text1^You failed! You lost some gold and integrity!  
 ~odds1^100
 ~odds Wit1^1
 ~odds Morale1^1
@@ -464,7 +464,7 @@
 ~Failure Coins1^0
 ~option text2^Deny the deal!
 ~success text2^You walk away from the deal.
-~fail text2^You failed! You lost some gold and integrity! :(
+~fail text2^You failed! You lost some gold and integrity!  
 ~odds2^100
 ~odds Wit2^1
 ~odds Morale2^1
@@ -496,15 +496,15 @@
 ~Failure Ale2^0
 ~Failure Gunpowder2^0
 ~Failure Coins2^0
-~eventName: Dealer03
-~event text^ You approach the land and see a merchant. He smiles at a new customer and asks if you want to trade. He fixes a hole in your ship!! +2 Integrity
+~eventName ^Dealer03
+~event text^You approach the land and see a merchant. He smiles at a new customer and asks if you want to trade. He fixes a hole in your ship!! +2 Integrity
 
 +2 Gun Powder
 +2 Ale
--Treasure chest :(
-~option text1^ Accept the deal!
-~success text1^ You grab the treasure and leave the 5 ale behind.
-~fail text1^ You failed! You lost some gold and integrity! :(
+-Treasure chest  
+~option text1^Accept the deal!
+~success text1^You grab the treasure and leave the 5 ale behind.
+~fail text1^You failed! You lost some gold and integrity!  
 ~odds1^100
 ~odds Wit1^1
 ~odds Morale1^1
@@ -538,7 +538,7 @@
 ~Failure Coins1^0
 ~option text2^Deny the deal!
 ~success text2^You walk away from the deal. You thank him for touching up your boat.
-~fail text2^You failed! You lost some gold and integrity! :(
+~fail text2^You failed! You lost some gold and integrity!  
 ~odds2^100
 ~odds Wit2^1
 ~odds Morale2^1
@@ -570,11 +570,11 @@
 ~Failure Ale2^0
 ~Failure Gunpowder2^0
 ~Failure Coins2^0
-~eventName: octopuss01
-~event text^ You see a giant octopus! It lingers beneath the ship... 
-~option text1^ Fight the large sea creature.
-~success text1^ You are victorious! The octopuss is dead!
-~fail text1^ You failed! You lost some gold and integrity! :(
+~eventName ^octopuss01
+~event text^You see a giant octopus! It lingers beneath the ship... 
+~option text1^Fight the large sea creature.
+~success text1^You are victorious! The octopuss is dead!
+~fail text1^You failed! You lost some gold and integrity!  
 ~odds1^50
 ~odds Wit1^0
 ~odds Morale1^0
@@ -610,7 +610,7 @@
 ~Fight Dif1^Medium
 ~option text2^Attempt to run away!
 ~success text2^You are victorious! You ran away!
-~fail text2^You failed! You lost some gold and integrity! :(
+~fail text2^You failed! You lost some gold and integrity!  
 ~odds2^50
 ~odds Wit2^20
 ~odds Morale2^20
