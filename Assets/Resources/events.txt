@@ -368,4 +368,4 @@
 ~Failure Coins2^1
 ~Make Fight2^False
 ~Fight Dif2^Random
-
+~
