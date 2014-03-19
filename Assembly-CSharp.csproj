@@ -48,10 +48,10 @@
   <ItemGroup>
      <Compile Include="Assets\Age of Sails\Other\Lighthouse\Quest.cs" />
      <Compile Include="Assets\Age of Sails\Other\eventManager.cs" />
-     <Compile Include="Assets\CameraScript.cs" />
-     <Compile Include="Assets\IslandScript.cs" />
-     <Compile Include="Assets\Quests.cs" />
-     <Compile Include="Assets\ShipScript.cs" />
+     <Compile Include="Assets\Resources\scripts\CameraScript.cs" />
+     <Compile Include="Assets\Resources\scripts\IslandScript.cs" />
+     <Compile Include="Assets\Resources\scripts\Quests.cs" />
+     <Compile Include="Assets\Resources\scripts\ShipScript.cs" />
      <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
      <None Include="Assets\Resources\events.txt" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
