@@ -37,7 +37,7 @@ public class ShipScript : MonoBehaviour
 	public int statEvil = 1;
 	public int statWit = 1;
 	public int statNotoriety = 1;
-	public int Charisma = 1;
+	public int statCharisma = 1;
 	
 	//Used for moving ship
 	public Transform startMarker;		//start location
@@ -119,11 +119,50 @@ public class ShipScript : MonoBehaviour
 	void OnGUI ()
 	{
 
-		// Box for stats on bottom of screen
-		Texture2D statIntegrityTexture = Resources.Load ("statImages/" + "integrity") as Texture2D;
-		GUI.Box(new Rect(10, 600, 500, 50), statIntegrityTexture);
+		// Box for resources at bottom left
+		GUI.Box(new Rect(10, 610, 400, 52), "");
 
-		Vector2 mouse = new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y);
+		Texture2D statIntegrityTexture = Resources.Load ("statImages/" + "integrity") as Texture2D;
+		Texture2D statGunPowderTexture = Resources.Load ("statImages/" + "cannonball") as Texture2D;
+		Texture2D statCrewTexture = Resources.Load ("statImages/" + "crew") as Texture2D;
+		Texture2D statAleTexture = Resources.Load ("statImages/" + "ale") as Texture2D;
+		Texture2D statTreasureTexture = Resources.Load ("statImages/" + "treasure") as Texture2D;
+
+		GUI.DrawTexture(new Rect(10, 612, 50, 50), statIntegrityTexture, ScaleMode.StretchToFill, true, 10.0F);
+		GUI.Label (new Rect(65, 625, 50, 50), ""+statIntegrity);
+
+		GUI.DrawTexture(new Rect(95, 612, 50, 50), statCrewTexture, ScaleMode.StretchToFill, true, 10.0F);
+		GUI.Label (new Rect(150, 625, 50, 50), ""+statCrewMembers);
+
+		GUI.DrawTexture(new Rect(170, 612, 50, 50), statAleTexture, ScaleMode.StretchToFill, true, 10.0F);
+		GUI.Label (new Rect(225, 625, 50, 50), ""+statAle);
+
+		GUI.DrawTexture(new Rect(245, 612, 50, 50), statGunPowderTexture, ScaleMode.StretchToFill, true, 10.0F);
+		GUI.Label (new Rect(300, 625, 50, 50), ""+statGunPowder);
+
+		GUI.DrawTexture(new Rect(320, 612, 50, 50), statTreasureTexture, ScaleMode.StretchToFill, true, 10.0F);
+		GUI.Label (new Rect(385, 625, 50, 50), ""+statTreasure);
+
+
+
+		//Box for stats at bottom right
+		GUI.Box(new Rect(870, 610, 400, 52), "");
+		int rightBarXLocation = 870;
+		GUI.DrawTexture(new Rect(rightBarXLocation += 20, 612, 50, 50), statIntegrityTexture, ScaleMode.StretchToFill, true, 10.0F);
+		GUI.Label (new Rect(rightBarXLocation += 50, 625, 50, 50), ""+statMorale);
+
+		GUI.DrawTexture(new Rect(rightBarXLocation += 20, 612, 50, 50), statIntegrityTexture, ScaleMode.StretchToFill, true, 10.0F);
+		GUI.Label (new Rect(rightBarXLocation += 50, 625, 50, 50), ""+statEvil);
+
+		GUI.DrawTexture(new Rect(rightBarXLocation += 20, 612, 50, 50), statIntegrityTexture, ScaleMode.StretchToFill, true, 10.0F);
+		GUI.Label (new Rect(rightBarXLocation += 50, 625, 50, 50), ""+statCharisma);
+
+		GUI.DrawTexture(new Rect(rightBarXLocation += 20, 612, 50, 50), statIntegrityTexture, ScaleMode.StretchToFill, true, 10.0F);
+		GUI.Label (new Rect(rightBarXLocation += 50, 625, 50, 50), ""+statNotoriety);
+
+		GUI.DrawTexture(new Rect(rightBarXLocation += 20, 612, 50, 50), statIntegrityTexture, ScaleMode.StretchToFill, true, 10.0F);
+		GUI.Label (new Rect(rightBarXLocation += 50, 625, 50, 50), ""+statWit);
+
 		var oldColor = GUI.backgroundColor;
 		// turn GUI white if we can 'investigate'
 		if (closeEnough == true) {
@@ -158,7 +197,7 @@ public class ShipScript : MonoBehaviour
 		}
 		
 		// Right Side Message //
-		GUI.Button (new Rect (1000, 10, 200, 400), rightSideMessage);
+		//GUI.Button (new Rect (1000, 10, 200, 400), rightSideMessage);
 		
 		GUI.backgroundColor = oldColor;
 
