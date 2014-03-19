@@ -65,10 +65,14 @@ public class ShipScript : MonoBehaviour
 	public bool mouseOverGui = false;
 	//questInfo
 	string questEventName;
-	
+	bool questSuccess = false;
+	string resultText = "";
+	bool secondQuestGUIOn = false;
+
 	bool questGUIOn = false;
 	Quests currentQuest;
 	public List<GameObject> islands;
+
 
 
 	// Use this for initialization
@@ -205,15 +209,119 @@ public class ShipScript : MonoBehaviour
 		if (questGUIOn){
 			GUIStyle boxStyle = "box";
 			boxStyle.wordWrap = true;
-			GUI.Box (new Rect (400, 100, 500, 500), currentQuest.eventText, boxStyle);
+			GUI.Box (new Rect (400, 100, 420, 430), ""); //outer event box
+
+			//quest image
 			string imagename = currentQuest.eventName.ToString().TrimEnd( '\r', '\n' );
+			Texture2D questTexture = Resources.Load ("questImages/" + imagename) as Texture2D;
+			GUI.DrawTexture(new Rect (460, 110, 300, 220), questTexture, ScaleMode.StretchToFill, true, 10.0F);
 
-			Debug.Log("This is the name of our image" + imagename);
-			Texture2D eventTexture = Resources.Load ("questImages/" + imagename) as Texture2D;
+			//quest text
+			GUI.Label (new Rect (415, 340, 410, 50 ), currentQuest.eventText);
 
-			GUI.Box (new Rect(450, 150, 400, 314), eventTexture, boxStyle);
-			GUI.Button (new Rect (470, 490, 42, 22), "Fight" );
-			GUI.Button (new Rect (590, 490, 42, 22), "Flee" );
+			GUI.Label (new Rect (575, 390, 200, 50 ), "Options:");
+
+			//first option
+			if (GUI.Button (new Rect (410, 420, 400, 40), currentQuest.optionText1 )) {
+				resultHandler(1);
+
+				if (questSuccess == true) {
+					resultText = currentQuest.successText1;
+					//results off success
+					statAle += currentQuest.successAle1;
+					statCharisma += currentQuest.successCharisma1;
+					statCrewMembers += currentQuest.successCrew1;
+					statEvil += currentQuest.successEvil1;
+					statGunPowder += currentQuest.successGunpowder1;
+					statIntegrity += currentQuest.successIntegrity1;
+					statMorale += currentQuest.successMorale1;
+					statNotoriety += currentQuest.successNotoriety1;
+					statTreasure += currentQuest.successCoins1;
+					statWit += currentQuest.successWit1;
+				
+
+				}else {
+					resultText = currentQuest.failText1;
+
+					//results off fail
+					//results off failure
+					statAle += currentQuest.failureAle1;
+					statCharisma += currentQuest.failureCharisma1;
+					statCrewMembers += currentQuest.failureCrew1;
+					statEvil += currentQuest.failureEvil1;
+					statGunPowder += currentQuest.failureGunpowder1;
+					statIntegrity += currentQuest.failureIntegrity1;
+					statMorale += currentQuest.failureMorale1;
+					statNotoriety += currentQuest.failureNotoriety1;
+					statTreasure += currentQuest.failureCoins1;
+					statWit += currentQuest.failureWit1;
+
+
+				}
+
+				secondQuestGUIOn = true;
+				questGUIOn = false;
+			}
+			//second option
+			Debug.Log(currentQuest.optionText2);
+			Debug.Log(resultText);
+			if (GUI.Button (new Rect (410, 480, 400, 40), currentQuest.optionText2)) {
+
+				resultHandler(2);
+
+				if (questSuccess == true) {
+					resultText = currentQuest.successText2;
+
+					//results off success
+					statAle += currentQuest.successAle2;
+					statCharisma += currentQuest.successCharisma2;
+					statCrewMembers += currentQuest.successCrew2;
+					statEvil += currentQuest.successEvil2;
+					statGunPowder += currentQuest.successGunpowder2;
+					statIntegrity += currentQuest.successIntegrity2;
+					statMorale += currentQuest.successMorale2;
+					statNotoriety += currentQuest.successNotoriety2;
+					statTreasure += currentQuest.successCoins2;
+					statWit += currentQuest.successWit2;
+
+				} else {
+					resultText = currentQuest.failText2;
+
+					//results off failure
+					statAle += currentQuest.failureAle2;
+					statCharisma += currentQuest.failureCharisma2;
+					statCrewMembers += currentQuest.failureCrew2;
+					statEvil += currentQuest.failureEvil2;
+					statGunPowder += currentQuest.failureGunpowder2;
+					statIntegrity += currentQuest.failureIntegrity2;
+					statMorale += currentQuest.failureMorale2;
+					statNotoriety += currentQuest.failureNotoriety2;
+					statTreasure += currentQuest.failureCoins2;
+					statWit += currentQuest.failureWit2;
+
+
+				}
+
+				secondQuestGUIOn = true;
+				questGUIOn = false;
+			}
+
+		}
+
+
+
+		if (secondQuestGUIOn){
+			GUIStyle boxStyle = "box";
+			boxStyle.wordWrap = true;
+			GUI.Box (new Rect (400, 100, 420, 430), ""); //outer event box
+			
+			//quest image
+			string imagename = currentQuest.eventName.ToString().TrimEnd( '\r', '\n' );
+			Texture2D questTexture = Resources.Load ("questImages/" + imagename) as Texture2D;
+			GUI.DrawTexture(new Rect (460, 110, 300, 220), questTexture, ScaleMode.StretchToFill, true, 10.0F);
+			
+			//quest text
+			GUI.Label (new Rect (415, 340, 410, 50 ), resultText);
 		}
 		
 	}
@@ -251,7 +359,9 @@ public class ShipScript : MonoBehaviour
 		currentQuest = cScript.questList[randomQuestNumber];
 		
 		questGUIOn = true;
-		//add quest to gui. 
+
+
+		//quest stuff
 		
 	}
 	
@@ -302,7 +412,9 @@ public class ShipScript : MonoBehaviour
 			//if clicked outside of event gui, turn it off
 			if (new Rect (400, 100, 500, 500).Contains (mouse) && questGUIOn){
 				canSail = false;
-			} else { questGUIOn = false; }
+				} else { 
+					questGUIOn = false;  
+					secondQuestGUIOn = false;}
 			
 			//if clicked outside of gui, sail there.
 			if (new Rect (10, 10, 200, 400).Contains (mouse)){
@@ -336,6 +448,24 @@ public class ShipScript : MonoBehaviour
 		
 	}
 	
+	public void resultHandler (int choice){
+		int diceRoll = Random.Range (1, 100); //for ints
+
+				if (choice == 1){
+					if (diceRoll >= currentQuest.odds1) {
+						questSuccess = true;
+					} else questSuccess = false;
+
+
+				}else if (choice == 2){
+					if (diceRoll >= currentQuest.odds2) {
+						questSuccess = true;
+					} else questSuccess = false;
+
+				} else { Debug.Log ("error"); }
+
+
+			}
 	
 	
 }

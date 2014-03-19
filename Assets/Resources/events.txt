@@ -1,8 +1,8 @@
-~eventName ^octopuss04
+~eventName^octopuss01
 ~event text^You see a giant octopus! It lingers beneath the ship... 
 ~option text1^Fight the large sea creature.
 ~success text1^You are victorious! The octopuss is dead!
-~fail text1^You failed! You lost some gold and integrity!  
+~fail text1^You failed! You lost some gold and integrity! :(
 ~odds1^50
 ~odds Wit1^1
 ~odds Morale1^1
@@ -14,634 +14,358 @@
 ~odds Ale1^1
 ~odds Gunpowder1^1
 ~odds Coins1^1
-~Success Wit1^0
-~Success Morale1^0
-~Success Notoriety1^0
-~Success Charisma1^0
-~Success Evil1^0
-~Success Crew1^0
-~Success Integrity1^0
-~Success Ale1^0
-~Success Gunpowder1^0
-~Success Coins1^0
-~Failure Wit1^0
-~Failure Morale1^0
-~Failure Notoriety1^0
-~Failure Charisma1^0
-~Failure Evil1^0
-~Failure Crew1^0
-~Failure Integrity1^0
-~Failure Ale1^0
-~Failure Gunpowder1^0
-~Failure Coins1^0
-~option text2^Attempt to run away!
-~success text2^You are victorious! You ran away!
-~fail text2^You failed! You lost some gold and integrity!  
-~odds2^50
-~odds Wit2^1
-~odds Morale2^1
-~odds Notoriety2^1
-~odds Charisma2^1
-~odds Evil2^1
-~odds Crew2^1
-~odds Integrity2^1
-~odds Ale2^1
-~odds Gunpowder2^1
-~odds Coins2^1
-~Success Wit2^0
-~Success Morale2^0
-~Success Notoriety2^0
-~Success Charisma2^0
-~Success Evil2^0
-~Success Crew2^0
-~Success Integrity2^0
-~Success Ale2^0
-~Success Gunpowder2^0
-~Success Coins2^0
-~Failure Wit2^0
-~Failure Morale2^0
-~Failure Notoriety2^0
-~Failure Charisma2^0
-~Failure Evil2^0
-~Failure Crew2^0
-~Failure Integrity2^0
-~Failure Ale2^0
-~Failure Gunpowder2^0
-~Failure Coins2^0
-~eventName ^octopuss04
-~event text^You see a giant octopus! It lingers beneath the ship... 
-~option text1^Fight the large sea creature.
-~success text1^You are victorious! The octopuss is dead!
-~fail text1^You failed! You lost some gold and integrity!  
-~odds1^50
-~odds Wit1^1
-~odds Morale1^1
-~odds Notoriety1^1
-~odds Charisma1^1
-~odds Evil1^1
-~odds Crew1^1
-~odds Integrity1^1
-~odds Ale1^1
-~odds Gunpowder1^1
-~odds Coins1^1
-~Success Wit1^0
-~Success Morale1^0
-~Success Notoriety1^0
-~Success Charisma1^0
-~Success Evil1^0
-~Success Crew1^0
-~Success Integrity1^0
-~Success Ale1^0
-~Success Gunpowder1^0
-~Success Coins1^0
-~Failure Wit1^0
-~Failure Morale1^0
-~Failure Notoriety1^0
-~Failure Charisma1^0
-~Failure Evil1^0
-~Failure Crew1^0
-~Failure Integrity1^0
-~Failure Ale1^0
-~Failure Gunpowder1^0
-~Failure Coins1^0
-~option text2^Attempt to run away!
-~success text2^You are victorious! You ran away!
-~fail text2^You failed! You lost some gold and integrity!  
-~odds2^50
-~odds Wit2^1
-~odds Morale2^1
-~odds Notoriety2^1
-~odds Charisma2^1
-~odds Evil2^1
-~odds Crew2^1
-~odds Integrity2^1
-~odds Ale2^1
-~odds Gunpowder2^1
-~odds Coins2^1
-~Success Wit2^0
-~Success Morale2^0
-~Success Notoriety2^0
-~Success Charisma2^0
-~Success Evil2^0
-~Success Crew2^0
-~Success Integrity2^0
-~Success Ale2^0
-~Success Gunpowder2^0
-~Success Coins2^0
-~Failure Wit2^0
-~Failure Morale2^0
-~Failure Notoriety2^0
-~Failure Charisma2^0
-~Failure Evil2^0
-~Failure Crew2^0
-~Failure Integrity2^0
-~Failure Ale2^0
-~Failure Gunpowder2^0
-~Failure Coins2^0
-~eventName ^octopuss04
-~event text^You see a giant octopus! It lingers beneath the ship... 
-~option text1^Fight the large sea creature.
-~success text1^You are victorious! The octopuss is dead!
-~fail text1^You failed! You lost some gold and integrity!  
-~odds1^50
-~odds Wit1^1
-~odds Morale1^1
-~odds Notoriety1^1
-~odds Charisma1^1
-~odds Evil1^1
-~odds Crew1^1
-~odds Integrity1^1
-~odds Ale1^1
-~odds Gunpowder1^1
-~odds Coins1^1
-~Success Wit1^0
-~Success Morale1^0
-~Success Notoriety1^0
-~Success Charisma1^0
-~Success Evil1^0
-~Success Crew1^0
-~Success Integrity1^0
-~Success Ale1^0
-~Success Gunpowder1^0
-~Success Coins1^0
-~Failure Wit1^0
-~Failure Morale1^0
-~Failure Notoriety1^0
-~Failure Charisma1^0
-~Failure Evil1^0
-~Failure Crew1^0
-~Failure Integrity1^0
-~Failure Ale1^0
-~Failure Gunpowder1^0
-~Failure Coins1^0
-~option text2^Attempt to run away!
-~success text2^You are victorious! You ran away!
-~fail text2^You failed! You lost some gold and integrity!  
-~odds2^50
-~odds Wit2^1
-~odds Morale2^1
-~odds Notoriety2^1
-~odds Charisma2^1
-~odds Evil2^1
-~odds Crew2^1
-~odds Integrity2^1
-~odds Ale2^1
-~odds Gunpowder2^1
-~odds Coins2^1
-~Success Wit2^0
-~Success Morale2^0
-~Success Notoriety2^0
-~Success Charisma2^0
-~Success Evil2^0
-~Success Crew2^0
-~Success Integrity2^0
-~Success Ale2^0
-~Success Gunpowder2^0
-~Success Coins2^0
-~Failure Wit2^0
-~Failure Morale2^0
-~Failure Notoriety2^0
-~Failure Charisma2^0
-~Failure Evil2^0
-~Failure Crew2^0
-~Failure Integrity2^0
-~Failure Ale2^0
-~Failure Gunpowder2^0
-~Failure Coins2^0
-~eventName ^octopuss04
-~event text^You see a giant octopus! It lingers beneath the ship... 
-~option text1^Fight the large sea creature.
-~success text1^You are victorious! The octopuss is dead!
-~fail text1^You failed! You lost some gold and integrity!  
-~odds1^50
-~odds Wit1^1
-~odds Morale1^1
-~odds Notoriety1^1
-~odds Charisma1^1
-~odds Evil1^1
-~odds Crew1^1
-~odds Integrity1^1
-~odds Ale1^1
-~odds Gunpowder1^1
-~odds Coins1^1
-~Success Wit1^0
-~Success Morale1^0
-~Success Notoriety1^0
-~Success Charisma1^0
-~Success Evil1^0
-~Success Crew1^0
-~Success Integrity1^0
-~Success Ale1^0
-~Success Gunpowder1^0
-~Success Coins1^0
-~Failure Wit1^0
-~Failure Morale1^0
-~Failure Notoriety1^0
-~Failure Charisma1^0
-~Failure Evil1^0
-~Failure Crew1^0
-~Failure Integrity1^0
-~Failure Ale1^0
-~Failure Gunpowder1^0
-~Failure Coins1^0
-~option text2^Attempt to run away!
-~success text2^You are victorious! You ran away!
-~fail text2^You failed! You lost some gold and integrity!  
-~odds2^50
-~odds Wit2^1
-~odds Morale2^1
-~odds Notoriety2^1
-~odds Charisma2^1
-~odds Evil2^1
-~odds Crew2^1
-~odds Integrity2^1
-~odds Ale2^1
-~odds Gunpowder2^1
-~odds Coins2^1
-~Success Wit2^0
-~Success Morale2^0
-~Success Notoriety2^0
-~Success Charisma2^0
-~Success Evil2^0
-~Success Crew2^0
-~Success Integrity2^0
-~Success Ale2^0
-~Success Gunpowder2^0
-~Success Coins2^0
-~Failure Wit2^0
-~Failure Morale2^0
-~Failure Notoriety2^0
-~Failure Charisma2^0
-~Failure Evil2^0
-~Failure Crew2^0
-~Failure Integrity2^0
-~Failure Ale2^0
-~Failure Gunpowder2^0
-~Failure Coins2^0
-~eventName ^octopuss04
-~event text^You see a giant octopus! It lingers beneath the ship... 
-~option text1^Fight the large sea creature.
-~success text1^You are victorious! The octopuss is dead!
-~fail text1^You failed! You lost some gold and integrity!  
-~odds1^50
-~odds Wit1^1
-~odds Morale1^1
-~odds Notoriety1^1
-~odds Charisma1^1
-~odds Evil1^1
-~odds Crew1^1
-~odds Integrity1^1
-~odds Ale1^1
-~odds Gunpowder1^1
-~odds Coins1^1
-~Success Wit1^0
-~Success Morale1^0
-~Success Notoriety1^0
-~Success Charisma1^0
-~Success Evil1^0
-~Success Crew1^0
-~Success Integrity1^0
-~Success Ale1^0
-~Success Gunpowder1^0
-~Success Coins1^0
-~Failure Wit1^0
-~Failure Morale1^0
-~Failure Notoriety1^0
-~Failure Charisma1^0
-~Failure Evil1^0
-~Failure Crew1^0
-~Failure Integrity1^0
-~Failure Ale1^0
-~Failure Gunpowder1^0
-~Failure Coins1^0
-~option text2^Attempt to run away!
-~success text2^You are victorious! You ran away!
-~fail text2^You failed! You lost some gold and integrity!  
-~odds2^50
-~odds Wit2^1
-~odds Morale2^1
-~odds Notoriety2^1
-~odds Charisma2^1
-~odds Evil2^1
-~odds Crew2^1
-~odds Integrity2^1
-~odds Ale2^1
-~odds Gunpowder2^1
-~odds Coins2^1
-~Success Wit2^0
-~Success Morale2^0
-~Success Notoriety2^0
-~Success Charisma2^0
-~Success Evil2^0
-~Success Crew2^0
-~Success Integrity2^0
-~Success Ale2^0
-~Success Gunpowder2^0
-~Success Coins2^0
-~Failure Wit2^0
-~Failure Morale2^0
-~Failure Notoriety2^0
-~Failure Charisma2^0
-~Failure Evil2^0
-~Failure Crew2^0
-~Failure Integrity2^0
-~Failure Ale2^0
-~Failure Gunpowder2^0
-~Failure Coins2^0
-~eventName ^Dealer01
-~event text^You approach the land and see a merchant. He smiles at a new customer and asks if you want to trade
-
-
--5 Ale
-+1 Treasure
-~option text1^Accept the deal!
-~success text1^You grab the treasure and leave the 5 ale behind.
-~fail text1^You failed! You lost some gold and integrity!  
-~odds1^100
-~odds Wit1^1
-~odds Morale1^1
-~odds Notoriety1^1
-~odds Charisma1^1
-~odds Evil1^1
-~odds Crew1^1
-~odds Integrity1^1
-~odds Ale1^1
-~odds Gunpowder1^1
-~odds Coins1^1
-~Success Wit1^0
-~Success Morale1^0
-~Success Notoriety1^0
-~Success Charisma1^0
-~Success Evil1^0
-~Success Crew1^0
-~Success Integrity1^0
-~Success Ale1^-5
-~Success Gunpowder1^0
-~Success Coins1^1
-~Failure Wit1^0
-~Failure Morale1^0
-~Failure Notoriety1^0
-~Failure Charisma1^0
-~Failure Evil1^0
-~Failure Crew1^0
-~Failure Integrity1^0
-~Failure Ale1^0
-~Failure Gunpowder1^0
-~Failure Coins1^0
-~option text2^Deny the deal!
-~success text2^You walk away from the deal.
-~fail text2^You failed! You lost some gold and integrity!  
-~odds2^100
-~odds Wit2^1
-~odds Morale2^1
-~odds Notoriety2^1
-~odds Charisma2^1
-~odds Evil2^1
-~odds Crew2^1
-~odds Integrity2^1
-~odds Ale2^1
-~odds Gunpowder2^1
-~odds Coins2^1
-~Success Wit2^0
-~Success Morale2^0
-~Success Notoriety2^0
-~Success Charisma2^0
-~Success Evil2^0
-~Success Crew2^0
-~Success Integrity2^0
-~Success Ale2^0
-~Success Gunpowder2^0
-~Success Coins2^0
-~Failure Wit2^0
-~Failure Morale2^0
-~Failure Notoriety2^0
-~Failure Charisma2^0
-~Failure Evil2^0
-~Failure Crew2^0
-~Failure Integrity2^0
-~Failure Ale2^0
-~Failure Gunpowder2^0
-~Failure Coins2^0
-~eventName ^Dealer02
-~event text^You approach the land and see a merchant. He smiles at a new customer and asks if you want to trade
-
-
--2 Gun Powder
-+1 Crew Mate
-~option text1^Accept the deal!
-~success text1^You grab the treasure and leave the 5 ale behind.
-~fail text1^You failed! You lost some gold and integrity!  
-~odds1^100
-~odds Wit1^1
-~odds Morale1^1
-~odds Notoriety1^1
-~odds Charisma1^1
-~odds Evil1^1
-~odds Crew1^1
-~odds Integrity1^1
-~odds Ale1^1
-~odds Gunpowder1^1
-~odds Coins1^1
-~Success Wit1^0
-~Success Morale1^0
-~Success Notoriety1^0
-~Success Charisma1^0
-~Success Evil1^0
+~Success Wit1^3
+~Success Morale1^1
+~Success Notoriety1^3
+~Success Charisma1^1
+~Success Evil1^1
 ~Success Crew1^1
-~Success Integrity1^0
-~Success Ale1^0
-~Success Gunpowder1^-2
+~Success Integrity1^1
+~Success Ale1^1
+~Success Gunpowder1^1
 ~Success Coins1^1
-~Failure Wit1^0
-~Failure Morale1^0
-~Failure Notoriety1^0
-~Failure Charisma1^0
-~Failure Evil1^0
-~Failure Crew1^0
-~Failure Integrity1^0
-~Failure Ale1^0
-~Failure Gunpowder1^0
-~Failure Coins1^0
-~option text2^Deny the deal!
-~success text2^You walk away from the deal.
-~fail text2^You failed! You lost some gold and integrity!  
-~odds2^100
-~odds Wit2^1
-~odds Morale2^1
-~odds Notoriety2^1
-~odds Charisma2^1
-~odds Evil2^1
-~odds Crew2^1
-~odds Integrity2^1
-~odds Ale2^1
-~odds Gunpowder2^1
-~odds Coins2^1
-~Success Wit2^0
-~Success Morale2^0
-~Success Notoriety2^0
-~Success Charisma2^0
-~Success Evil2^0
-~Success Crew2^0
-~Success Integrity2^0
-~Success Ale2^0
-~Success Gunpowder2^0
-~Success Coins2^0
-~Failure Wit2^0
-~Failure Morale2^0
-~Failure Notoriety2^0
-~Failure Charisma2^0
-~Failure Evil2^0
-~Failure Crew2^0
-~Failure Integrity2^0
-~Failure Ale2^0
-~Failure Gunpowder2^0
-~Failure Coins2^0
-~eventName ^Dealer03
-~event text^You approach the land and see a merchant. He smiles at a new customer and asks if you want to trade. He fixes a hole in your ship!! +2 Integrity
-
-+2 Gun Powder
-+2 Ale
--Treasure chest  
-~option text1^Accept the deal!
-~success text1^You grab the treasure and leave the 5 ale behind.
-~fail text1^You failed! You lost some gold and integrity!  
-~odds1^100
-~odds Wit1^1
-~odds Morale1^1
-~odds Notoriety1^1
-~odds Charisma1^1
-~odds Evil1^1
-~odds Crew1^1
-~odds Integrity1^1
-~odds Ale1^1
-~odds Gunpowder1^1
-~odds Coins1^1
-~Success Wit1^0
-~Success Morale1^0
-~Success Notoriety1^0
-~Success Charisma1^0
-~Success Evil1^0
-~Success Crew1^0
-~Success Integrity1^2
-~Success Ale1^2
-~Success Gunpowder1^2
-~Success Coins1^-1
-~Failure Wit1^0
-~Failure Morale1^0
-~Failure Notoriety1^0
-~Failure Charisma1^0
-~Failure Evil1^0
-~Failure Crew1^0
-~Failure Integrity1^0
-~Failure Ale1^0
-~Failure Gunpowder1^0
-~Failure Coins1^0
-~option text2^Deny the deal!
-~success text2^You walk away from the deal. You thank him for touching up your boat.
-~fail text2^You failed! You lost some gold and integrity!  
-~odds2^100
-~odds Wit2^1
-~odds Morale2^1
-~odds Notoriety2^1
-~odds Charisma2^1
-~odds Evil2^1
-~odds Crew2^1
-~odds Integrity2^1
-~odds Ale2^1
-~odds Gunpowder2^1
-~odds Coins2^1
-~Success Wit2^0
-~Success Morale2^0
-~Success Notoriety2^0
-~Success Charisma2^0
-~Success Evil2^0
-~Success Crew2^0
-~Success Integrity2^2
-~Success Ale2^0
-~Success Gunpowder2^0
-~Success Coins2^0
-~Failure Wit2^0
-~Failure Morale2^0
-~Failure Notoriety2^0
-~Failure Charisma2^0
-~Failure Evil2^0
-~Failure Crew2^0
-~Failure Integrity2^0
-~Failure Ale2^0
-~Failure Gunpowder2^0
-~Failure Coins2^0
-~eventName ^octopuss01
-~event text^You see a giant octopus! It lingers beneath the ship... 
-~option text1^Fight the large sea creature.
-~success text1^You are victorious! The octopuss is dead!
-~fail text1^You failed! You lost some gold and integrity!  
-~odds1^50
-~odds Wit1^0
-~odds Morale1^0
-~odds Notoriety1^0
-~odds Charisma1^0
-~odds Evil1^0
-~odds Crew1^0
-~odds Integrity1^0
-~odds Ale1^0
-~odds Gunpowder1^0
-~odds Coins1^0
-~Success Wit1^0
-~Success Morale1^0
-~Success Notoriety1^0
-~Success Charisma1^0
-~Success Evil1^0
-~Success Crew1^0
-~Success Integrity1^0
-~Success Ale1^0
-~Success Gunpowder1^0
-~Success Coins1^0
-~Failure Wit1^0
-~Failure Morale1^0
-~Failure Notoriety1^0
-~Failure Charisma1^0
-~Failure Evil1^0
-~Failure Crew1^0
-~Failure Integrity1^0
-~Failure Ale1^0
-~Failure Gunpowder1^0
-~Failure Coins1^0
-~Make Fight1^True
-~Fight Dif1^Medium
+~Failure Wit1^1
+~Failure Morale1^1
+~Failure Notoriety1^-3
+~Failure Charisma1^1
+~Failure Evil1^-2
+~Failure Crew1^1
+~Failure Integrity1^1
+~Failure Ale1^1
+~Failure Gunpowder1^1
+~Failure Coins1^1
+~Make Fight1^False
+~Fight Dif1^Random
 ~option text2^Attempt to run away!
 ~success text2^You are victorious! You ran away!
-~fail text2^You failed! You lost some gold and integrity!  
+~fail text2^You failed! You lost some gold and integrity! :(
 ~odds2^50
-~odds Wit2^20
-~odds Morale2^20
-~odds Notoriety2^20
-~odds Charisma2^20
-~odds Evil2^20
-~odds Crew2^20
-~odds Integrity2^20
-~odds Ale2^20
-~odds Gunpowder2^20
-~odds Coins2^20
-~Success Wit2^0
-~Success Morale2^0
-~Success Notoriety2^0
-~Success Charisma2^0
-~Success Evil2^0
-~Success Crew2^0
-~Success Integrity2^0
-~Success Ale2^0
-~Success Gunpowder2^0
-~Success Coins2^0
-~Failure Wit2^0
-~Failure Morale2^0
-~Failure Notoriety2^0
-~Failure Charisma2^0
-~Failure Evil2^0
-~Failure Crew2^0
-~Failure Integrity2^0
-~Failure Ale2^0
-~Failure Gunpowder2^0
-~Failure Coins2^0
+~odds Wit2^1
+~odds Morale2^1
+~odds Notoriety2^1
+~odds Charisma2^1
+~odds Evil2^1
+~odds Crew2^1
+~odds Integrity2^1
+~odds Ale2^1
+~odds Gunpowder2^1
+~odds Coins2^1
+~Success Wit2^2
+~Success Morale2^1
+~Success Notoriety2^1
+~Success Charisma2^3
+~Success Evil2^1
+~Success Crew2^1
+~Success Integrity2^1
+~Success Ale2^1
+~Success Gunpowder2^1
+~Success Coins2^1
+~Failure Wit2^-3
+~Failure Morale2^2
+~Failure Notoriety2^1
+~Failure Charisma2^1
+~Failure Evil2^1
+~Failure Crew2^1
+~Failure Integrity2^1
+~Failure Ale2^1
+~Failure Gunpowder2^1
+~Failure Coins2^1
 ~Make Fight2^False
 ~Fight Dif2^Random
-~
+~eventName^octopuss02
+~event text^You see a giant octopus! It lingers beneath the ship... 
+~option text1^Fight the large sea creature.
+~success text1^You are victorious! The octopuss is dead!
+~fail text1^You failed! You lost some gold and integrity! :(
+~odds1^50
+~odds Wit1^1
+~odds Morale1^1
+~odds Notoriety1^1
+~odds Charisma1^1
+~odds Evil1^1
+~odds Crew1^1
+~odds Integrity1^1
+~odds Ale1^1
+~odds Gunpowder1^1
+~odds Coins1^1
+~Success Wit1^3
+~Success Morale1^1
+~Success Notoriety1^5
+~Success Charisma1^-1
+~Success Evil1^-1
+~Success Crew1^3
+~Success Integrity1^1
+~Success Ale1^1
+~Success Gunpowder1^1
+~Success Coins1^1
+~Failure Wit1^1
+~Failure Morale1^1
+~Failure Notoriety1^-4
+~Failure Charisma1^1
+~Failure Evil1^-2
+~Failure Crew1^1
+~Failure Integrity1^1
+~Failure Ale1^1
+~Failure Gunpowder1^1
+~Failure Coins1^1
+~Make Fight1^False
+~Fight Dif1^Random
+~option text2^Attempt to run away!
+~success text2^You are victorious! You ran away!
+~fail text2^You failed! You lost some gold and integrity! :(
+~odds2^50
+~odds Wit2^1
+~odds Morale2^1
+~odds Notoriety2^1
+~odds Charisma2^1
+~odds Evil2^1
+~odds Crew2^1
+~odds Integrity2^1
+~odds Ale2^1
+~odds Gunpowder2^1
+~odds Coins2^1
+~Success Wit2^2
+~Success Morale2^1
+~Success Notoriety2^1
+~Success Charisma2^3
+~Success Evil2^1
+~Success Crew2^1
+~Success Integrity2^1
+~Success Ale2^1
+~Success Gunpowder2^1
+~Success Coins2^1
+~Failure Wit2^-3
+~Failure Morale2^2
+~Failure Notoriety2^1
+~Failure Charisma2^-1
+~Failure Evil2^1
+~Failure Crew2^1
+~Failure Integrity2^1
+~Failure Ale2^1
+~Failure Gunpowder2^1
+~Failure Coins2^1
+~Make Fight2^False
+~Fight Dif2^Random
+~eventName^cat01
+~event text^meow meow!
+~option text1^Fight the large sea creature.
+~success text1^You are victorious! The octopuss is dead!
+~fail text1^You failed! You lost some gold and integrity! :(
+~odds1^50
+~odds Wit1^1
+~odds Morale1^1
+~odds Notoriety1^1
+~odds Charisma1^1
+~odds Evil1^1
+~odds Crew1^1
+~odds Integrity1^1
+~odds Ale1^1
+~odds Gunpowder1^1
+~odds Coins1^1
+~Success Wit1^3
+~Success Morale1^1
+~Success Notoriety1^5
+~Success Charisma1^-1
+~Success Evil1^-1
+~Success Crew1^3
+~Success Integrity1^1
+~Success Ale1^1
+~Success Gunpowder1^1
+~Success Coins1^1
+~Failure Wit1^1
+~Failure Morale1^1
+~Failure Notoriety1^-4
+~Failure Charisma1^1
+~Failure Evil1^-2
+~Failure Crew1^1
+~Failure Integrity1^1
+~Failure Ale1^1
+~Failure Gunpowder1^1
+~Failure Coins1^1
+~Make Fight1^False
+~Fight Dif1^Random
+~option text2^Attempt to run away!
+~success text2^You are victorious! You ran away!
+~fail text2^You failed! You lost some gold and integrity! :(
+~odds2^50
+~odds Wit2^1
+~odds Morale2^1
+~odds Notoriety2^1
+~odds Charisma2^1
+~odds Evil2^1
+~odds Crew2^1
+~odds Integrity2^1
+~odds Ale2^1
+~odds Gunpowder2^1
+~odds Coins2^1
+~Success Wit2^2
+~Success Morale2^1
+~Success Notoriety2^1
+~Success Charisma2^3
+~Success Evil2^1
+~Success Crew2^1
+~Success Integrity2^1
+~Success Ale2^1
+~Success Gunpowder2^1
+~Success Coins2^1
+~Failure Wit2^-3
+~Failure Morale2^2
+~Failure Notoriety2^1
+~Failure Charisma2^-1
+~Failure Evil2^1
+~Failure Crew2^1
+~Failure Integrity2^1
+~Failure Ale2^1
+~Failure Gunpowder2^1
+~Failure Coins2^1
+~Make Fight2^False
+~Fight Dif2^Random
+~eventName^dealer01
+~event text^you see a dealer
+~option text1^Fight the large sea creature.
+~success text1^You are victorious! The octopuss is dead!
+~fail text1^You failed! You lost some gold and integrity! :(
+~odds1^50
+~odds Wit1^1
+~odds Morale1^1
+~odds Notoriety1^1
+~odds Charisma1^1
+~odds Evil1^1
+~odds Crew1^1
+~odds Integrity1^1
+~odds Ale1^1
+~odds Gunpowder1^1
+~odds Coins1^1
+~Success Wit1^3
+~Success Morale1^1
+~Success Notoriety1^5
+~Success Charisma1^-1
+~Success Evil1^-1
+~Success Crew1^3
+~Success Integrity1^1
+~Success Ale1^1
+~Success Gunpowder1^1
+~Success Coins1^1
+~Failure Wit1^1
+~Failure Morale1^1
+~Failure Notoriety1^-4
+~Failure Charisma1^1
+~Failure Evil1^-2
+~Failure Crew1^1
+~Failure Integrity1^1
+~Failure Ale1^1
+~Failure Gunpowder1^1
+~Failure Coins1^1
+~Make Fight1^False
+~Fight Dif1^Random
+~option text2^Attempt to run away!
+~success text2^You are victorious! You ran away!
+~fail text2^You failed! You lost some gold and integrity! :(
+~odds2^50
+~odds Wit2^1
+~odds Morale2^1
+~odds Notoriety2^1
+~odds Charisma2^1
+~odds Evil2^1
+~odds Crew2^1
+~odds Integrity2^1
+~odds Ale2^1
+~odds Gunpowder2^1
+~odds Coins2^1
+~Success Wit2^2
+~Success Morale2^1
+~Success Notoriety2^1
+~Success Charisma2^3
+~Success Evil2^1
+~Success Crew2^1
+~Success Integrity2^1
+~Success Ale2^1
+~Success Gunpowder2^1
+~Success Coins2^1
+~Failure Wit2^-3
+~Failure Morale2^2
+~Failure Notoriety2^1
+~Failure Charisma2^-1
+~Failure Evil2^1
+~Failure Crew2^1
+~Failure Integrity2^1
+~Failure Ale2^1
+~Failure Gunpowder2^1
+~Failure Coins2^1
+~Make Fight2^False
+~Fight Dif2^Random
+~eventName^dealer02
+~event text^ou see a dealer again
+~option text1^Fight the large sea creature.
+~success text1^You are victorious! The octopuss is dead!
+~fail text1^You failed! You lost some gold and integrity! :(
+~odds1^50
+~odds Wit1^1
+~odds Morale1^1
+~odds Notoriety1^1
+~odds Charisma1^1
+~odds Evil1^1
+~odds Crew1^1
+~odds Integrity1^1
+~odds Ale1^1
+~odds Gunpowder1^1
+~odds Coins1^1
+~Success Wit1^3
+~Success Morale1^1
+~Success Notoriety1^5
+~Success Charisma1^-1
+~Success Evil1^-1
+~Success Crew1^3
+~Success Integrity1^1
+~Success Ale1^1
+~Success Gunpowder1^1
+~Success Coins1^1
+~Failure Wit1^1
+~Failure Morale1^1
+~Failure Notoriety1^-4
+~Failure Charisma1^1
+~Failure Evil1^-2
+~Failure Crew1^1
+~Failure Integrity1^1
+~Failure Ale1^1
+~Failure Gunpowder1^1
+~Failure Coins1^1
+~Make Fight1^False
+~Fight Dif1^Random
+~option text2^Attempt to run away!
+~success text2^You are victorious! You ran away!
+~fail text2^You failed! You lost some gold and integrity! :(
+~odds2^50
+~odds Wit2^1
+~odds Morale2^1
+~odds Notoriety2^1
+~odds Charisma2^1
+~odds Evil2^1
+~odds Crew2^1
+~odds Integrity2^1
+~odds Ale2^1
+~odds Gunpowder2^1
+~odds Coins2^1
+~Success Wit2^2
+~Success Morale2^1
+~Success Notoriety2^1
+~Success Charisma2^3
+~Success Evil2^1
+~Success Crew2^1
+~Success Integrity2^1
+~Success Ale2^1
+~Success Gunpowder2^1
+~Success Coins2^1
+~Failure Wit2^-3
+~Failure Morale2^2
+~Failure Notoriety2^1
+~Failure Charisma2^-1
+~Failure Evil2^1
+~Failure Crew2^1
+~Failure Integrity2^1
+~Failure Ale2^1
+~Failure Gunpowder2^1
+~Failure Coins2^1
+~Make Fight2^False
+~Fight Dif2^Random
+
