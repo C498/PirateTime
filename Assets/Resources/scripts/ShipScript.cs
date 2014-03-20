@@ -170,6 +170,12 @@ public class ShipScript : MonoBehaviour
 		Texture2D statCrewTexture = Resources.Load ("statImages/" + "crew") as Texture2D;
 		Texture2D statAleTexture = Resources.Load ("statImages/" + "ale") as Texture2D;
 		Texture2D statTreasureTexture = Resources.Load ("statImages/" + "treasure") as Texture2D;
+		
+		Texture2D statNotorietyTexture = Resources.Load ("statImages/" + "notoriety") as Texture2D;
+		Texture2D statWitTexture = Resources.Load ("statImages/" + "wit") as Texture2D;
+		Texture2D statCharismaTexture = Resources.Load ("statImages/" + "charisma") as Texture2D;
+		Texture2D statEvilTexture = Resources.Load ("statImages/" + "evil") as Texture2D;
+		Texture2D statMoraleTexture = Resources.Load ("statImages/" + "morale") as Texture2D;
 
 		GUI.DrawTexture(new Rect(10, 612, 50, 50), statIntegrityTexture, ScaleMode.StretchToFill, true, 10.0F);
 		GUI.Label (new Rect(65, 625, 50, 50), ""+statIntegrity);
@@ -191,19 +197,19 @@ public class ShipScript : MonoBehaviour
 		//Box for stats at bottom right
 		GUI.Box(new Rect(870, 610, 400, 52), "");
 		int rightBarXLocation = 870;
-		GUI.DrawTexture(new Rect(rightBarXLocation += 20, 612, 50, 50), statIntegrityTexture, ScaleMode.StretchToFill, true, 10.0F);
+		GUI.DrawTexture(new Rect(rightBarXLocation += 20, 612, 50, 50), statMoraleTexture, ScaleMode.StretchToFill, true, 10.0F);
 		GUI.Label (new Rect(rightBarXLocation += 50, 625, 50, 50), ""+statMorale);
 
-		GUI.DrawTexture(new Rect(rightBarXLocation += 20, 612, 50, 50), statIntegrityTexture, ScaleMode.StretchToFill, true, 10.0F);
+		GUI.DrawTexture(new Rect(rightBarXLocation += 20, 612, 50, 50), statEvilTexture, ScaleMode.StretchToFill, true, 10.0F);
 		GUI.Label (new Rect(rightBarXLocation += 50, 625, 50, 50), ""+statEvil);
 
-		GUI.DrawTexture(new Rect(rightBarXLocation += 20, 612, 50, 50), statIntegrityTexture, ScaleMode.StretchToFill, true, 10.0F);
+		GUI.DrawTexture(new Rect(rightBarXLocation += 20, 612, 50, 50), statCharismaTexture, ScaleMode.StretchToFill, true, 10.0F);
 		GUI.Label (new Rect(rightBarXLocation += 50, 625, 50, 50), ""+statCharisma);
 
-		GUI.DrawTexture(new Rect(rightBarXLocation += 20, 612, 50, 50), statIntegrityTexture, ScaleMode.StretchToFill, true, 10.0F);
+		GUI.DrawTexture(new Rect(rightBarXLocation += 20, 612, 50, 50), statNotorietyTexture, ScaleMode.StretchToFill, true, 10.0F);
 		GUI.Label (new Rect(rightBarXLocation += 50, 625, 50, 50), ""+statNotoriety);
 
-		GUI.DrawTexture(new Rect(rightBarXLocation += 20, 612, 50, 50), statIntegrityTexture, ScaleMode.StretchToFill, true, 10.0F);
+		GUI.DrawTexture(new Rect(rightBarXLocation += 20, 612, 50, 50), statWitTexture, ScaleMode.StretchToFill, true, 10.0F);
 		GUI.Label (new Rect(rightBarXLocation += 50, 625, 50, 50), ""+statWit);
 
 		var oldColor = GUI.backgroundColor;
